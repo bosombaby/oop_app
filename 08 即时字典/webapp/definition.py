@@ -6,11 +6,12 @@ class Definition:
         self.term = term
 
     def get(self):
-        df = pd.read_csv("files/word.csv", index_col=0)
+        df = pd.read_csv("../files/word.csv", index_col=0)
         result = df.loc[df["word"] == self.term]["definition"]
         return tuple(result)
 
 
 if __name__ == "__main__":
     word = Definition("Young")
-    print(word.get())
+    print("".join(word.get()))
+    # print(word.get())
