@@ -1,5 +1,5 @@
 import justpy as jp
-import definition
+from .definition import Definition
 
 
 class Dictionary:
@@ -32,6 +32,6 @@ class Dictionary:
     @staticmethod
     def get_word(widget, msg):
         word = widget.target.value
-        data = definition.Definition(word).get()
-        print(definition.Definition(word))
+        data = Definition(word).get()
+        print(Definition(word))
         widget.result.text = data
